@@ -74,7 +74,7 @@ AnimationEasing - this is a class that provides a large majority of common easin
 ####CSSChangeState(divElement, elementHeight, state)
 	Description:
 		- Changes the sprite state of a given div. The div should have a background associated to it that would be a sprite. For example:
-		div.style.background = 'transparent url(' + imgSrc + '_left.png) 0 0 no-repeat';
+		div.style.background = 'transparent url(' + imgSrc + '.png) 0 0 no-repeat';
 		div.style.backgroundSize = '<Display Element Width>px  <Display Element Height>px';
 	
 	Arguments:
@@ -98,7 +98,7 @@ AnimationEasing - this is a class that provides a large majority of common easin
 ####CSSSprite(divElement, elementWidth, fps, numFrames, [completionTimes])
 	Description:
 		- Runs a sprite against a div. The div should have a background associated to it that would be a sprite. For     example:
-		div.style.background = 'transparent url(' + imgSrc + '_left.png) 0 0 no-repeat';
+		div.style.background = 'transparent url(' + imgSrc + '.png) 0 0 no-repeat';
 		div.style.backgroundSize = '<ElementWidth>px  <ElementHeight>px';
 	
 	Arguments:
