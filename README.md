@@ -3,6 +3,8 @@ This is a fairly simple and easy to use script that will allow creating dynamic 
 
 ##Usage
 There are many functions provided with this library. Below will show examples of each.
+###Demo
+Here is a very simple example of the animations in action: http://zenoware.com/AnimationsTest/.
 
 ###Static Variables
 AnimationEasing - this is a class that provides a large majority of common easing functions as static strings.
