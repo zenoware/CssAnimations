@@ -337,3 +337,6 @@ AnimationEasing - this is a class that provides a large majority of common easin
 ##Notes on Contributing
 This code was originally written in TypeScript. The generated JavaScript file is provided. If changes are made, it would be best to do it in TypeScript and also commit the generated JavaScript for those who do not wish to mess with it.
 
+##Contribution List
+Daniel Wyers - Testing and Documentation
+Christopher Wang - Testing
