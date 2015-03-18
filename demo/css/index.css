@@ -1,0 +1,38 @@
+body {
+    height:100%;
+}
+html {
+    height:100%;
+}
+
+.wholeWidth {
+    width:100%;
+    clear:both;
+}
+.halfWidth {
+    width:50%;
+    float:left;
+    clear:none;
+}
+.thirdWidth {
+    width:33%;
+    float:left;
+    clear:none;
+}
+.barOnTop {
+    border-top:1px solid black;
+}
+#rotateThisDiv {
+    background-color:blue;
+}
+#flipThisDiv {
+    background-image:url('../images/sidedImg.jpg');
+    background-position:left top;
+    background-size:contain;
+}
+#AnimateWithTranslateDiv {
+    background-color: orange;
+}
+.CSSSpriteDiv {
+    background: transparent url('../images/full_sheep_sprite_left.png') 0 0 no-repeat;
+}
