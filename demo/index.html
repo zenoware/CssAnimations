@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <title>Animations library test</title>
+    <link rel="stylesheet" href="css/index.css" type="text/css" />
+    <!--<script src="Scripts/Animations.js" type="text/javascript"></script>-->
+    <script src="https://rawgit.com/Zenoware/CssAnimations/master/Animations.js" type="text/javascript"></script>
+</head>
+<body>
+    <!--Rotate-->
+    <div class="wholeWidth">
+        <div class="halfWidth">
+            <div class="wholeWidth">
+                <button onclick="RotateDiv()">Rotate</button>
+            </div>
+            <div class="wholeWidth">
+                <div class="thirdWidth">
+                    <label>Transition Time</label>
+                    <br />
+                    <input type="number" id="rotateInputTransition" value="10" /><!--Transition time in seconds-->
+                </div>
+                <div class="thirdWidth">
+                    <label>Delay</label>
+                    <br />
+                    <input type="number" id="rotateInputDelay" value="0" /><!--Delay-->
+                </div>
+                <div class="thirdWidth">
+                    <label>Degrees</label>
+                    <br />
+                    <input type="number" id="rotateInputDegrees" value="14400" /><!--Degrees to rotate-->
+                </div>
+            </div>
+        </div>
+        <div class="halfWidth">
+            <div id="rotateThisDiv"></div>
+        </div>
+    </div>
+    <!--Flip-->
+    <div class="wholeWidth barOnTop">
+        <div class="halfWidth">
+            <button onclick="FlipDivInX()">FlipX</button>
+            <button onclick="FlipDivInY()">FlipY</button>
+        </div>
+        <div class="halfWidth">
+            <div id="flipThisDiv"></div>
+        </div>
+    </div>
+    <!--ChangeCSSState-->
+    <div class="wholeWidth barOnTop">
+        <div class="halfWidth">
+            <button onclick="ChangeCSSState()">Change CSS State</button>
+            <select id="ChangeCSSStateSelect">
+                <option>0</option>
+                <option>1</option>
+                <option>2</option>
+            </select>
+        </div>
+        <div class="halfWidth">
+            <div id="CSSChangeState" class="CSSSpriteDiv"></div>
+        </div>
+    </div>
+    <!--CSSSPrite-->
+    <div class="wholeWidth barOnTop">
+        <div class="halfWidth">
+            <button onclick="StartCSSSprite()">CSS Sprite</button>
+        </div>
+        <div class="halfWidth">
+            <div id="CSSSpriteDiv" class="CSSSpriteDiv"></div>
+        </div>
+    </div>
+    <div class="wholeWidth barOnTop">
+        <div class="halfWidth">
+            <button onclick="AnimateWithTranslate()">Animate with Translate</button>
+        </div>
+        <div class="halfWidth">
+            <div id="AnimateWithTranslateDiv"></div>
+        </div>
+    </div>
+    <!--Scripts to fire after dom-->
+    <script src="Scripts/index.js" type="text/javascript"></script>
+</body>
+</html>
