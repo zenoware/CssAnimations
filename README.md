@@ -1,17 +1,17 @@
 ## Background
 This is a fairly simple and easy to use script that will allow creating dynamic CSS transitions/translations with ease. This library was initially made a while ago to distribute among some personal apps using phonegap. If anyone has ever tried to create animations using jQuery, you will quickly find out the issues of changing styles dynamically on a timer is just not very efficient on mobile devices. This is a way around that issue. This library also supplies a simple implementation for Sprites.
 
-##Usage
+## Usage
 There are many functions provided with this library. Below will show examples of each.
-###Demo
+### Demo
 Here is a very simple example of the animations in action: http://zenoware.com/AnimationsTest/.
 
-###Static Variables
+### Static Variables
 AnimationEasing - this is a class that provides a large majority of common easing functions as static strings.
 
-###Static Functions
+### Static Functions
 
-####AnimateCss(divElement, cssAnimation, transitionTimeInSec, [infiniteAnimation], [timingFunction])
+#### AnimateCss(divElement, cssAnimation, transitionTimeInSec, [infiniteAnimation], [timingFunction])
 	Description:
 		- A simple call to run a pre-defined css animation on a div.
 	Arguments:
@@ -21,13 +21,13 @@ AnimationEasing - this is a class that provides a large majority of common easin
 		- infiniteAnimation: Optional parameter that will set the animation to run infinitely if set to true.
 		- timingFunction: Optional parameter that will set the timing function for the animation if set. Uses linear    timing function otherwise.
 	 
-####TypeScript Example:
+#### TypeScript Example:
     Animations.AnimateCss(<HTMLDivElement>document.getElementById('id'), 'loadSpin', 2, true, AnimationEasing.linear);
 
-####JavaScript Example:
+#### JavaScript Example:
     Animations.AnimateCss(document.getElementById('id'), 'loadSpin', 2, true, AnimationEasing.linear);
 		
-####Rotate(divElement, transitionTimeInSec, delay, rotation)
+#### Rotate(divElement, transitionTimeInSec, delay, rotation)
 	Description:
 		- Perform a CSS rotate on a div.
 		- NOTE: rotates to a set degree.  If performing a second rotation you will need to use the cumulative degree for the rotation variable.
@@ -38,42 +38,42 @@ AnimationEasing - this is a class that provides a large majority of common easin
 		- finalDegrees: degree mark to which to rotate.
 	
 
-####TypeScript Example:
+#### TypeScript Example:
 	Animations.Rotate(<HTMLDivElement>document.getElementById('id'), 2, 0, 360);
 	
-####JavaScript Example:
+#### JavaScript Example:
 	Animations.Rotate(document.getElementById('id'), 2, 0, 360);
 	
-####FlipX(divElement, [isFlipped])
+#### FlipX(divElement, [isFlipped])
 	Description:
 		- Flips a div on its X axis.
 	Arguments:
 		- divElement: the element you wish to flip.
 		- isFlipped: Optional boolean if the div has already been flipped. If so, reset.
 
-####TypeScript Example:
+#### TypeScript Example:
 	Animations.FlipX(<HTMLDivElement>document.getElementById('id'));
 	
-####JavaScript Example:
+#### JavaScript Example:
 	Animations.FlipX(<HTMLDivElement>document.getElementById('id'));
 	
-####FlipY(divElement, [isFlipped])
+#### FlipY(divElement, [isFlipped])
 	Description:
 		- Flips a div on its Y axis.
 	Arguments:
 		- divElement: the element you wish to flip.
 		- isFlipped: Optional boolean if the div has already been flipped. If so, reset.
 	
-####TypeScript Example:
+#### TypeScript Example:
 	Animations.FlipY(<HTMLDivElement>document.getElementById('id'));
 	
-####JavaScript Example:
+#### JavaScript Example:
 	Animations.FlipY(<HTMLDivElement>document.getElementById('id'));
 
 
-###Public Functions
+### Public Functions
 
-####CSSChangeState(divElement, elementHeight, state)
+#### CSSChangeState(divElement, elementHeight, state)
 	Description:
 		- Changes the sprite state of a given div. The div should have a background associated to it that would be a sprite. For example:
 		div.style.background = 'transparent url(' + imgSrc + '.png) 0 0 no-repeat';
@@ -84,20 +84,20 @@ AnimationEasing - this is a class that provides a large majority of common easin
 		- elementHeight: the height of the element.
 		- state: which state to display.
 		
-####TypeScript Example:
+#### TypeScript Example:
 	
 	var animations: Animations = new Animations();
 	var divElement: HTMLDivElement = <HTMLDivElement>document.getElementById('id');
 	animations.CSSSprite(divElement, divElement.offsetHeight, 1);
 	
-####JavaScript Example:
+#### JavaScript Example:
 	
 	var animations = new Animations();
 	var divElement = document.getElementById('id');
 	animations.CSSSprite(divElement, divElement.offsetHeight, 1);
 	
 
-####CSSSprite(divElement, elementWidth, fps, numFrames, [completionTimes])
+#### CSSSprite(divElement, elementWidth, fps, numFrames, [completionTimes])
 	Description:
 		- Runs a sprite against a div. The div should have a background associated to it that would be a sprite. For     example:
 		div.style.background = 'transparent url(' + imgSrc + '.png) 0 0 no-repeat';
@@ -110,35 +110,35 @@ AnimationEasing - this is a class that provides a large majority of common easin
 		- numFrames: number of frames in the sprite.
 		- completionTimes: Optional parameter for how many times the sprite should execute. Default is 10.
 		
-####TypeScript Example:
+#### TypeScript Example:
 	
 	var animations: Animations = new Animations();
 	var divElement: HTMLDivElement = <HTMLDivElement>document.getElementById('id');
 	animations.CSSSprite(divElement, divElement.offsetWidth, interval, 4, 1000);
 	
-####JavaScript Example:
+#### JavaScript Example:
 	
 	var animations = new Animations();
 	var divElement = document.getElementById('id');
 	animations.CSSSprite(divElement, divElement.offsetWidth, interval, 4, 1000);
 	
-####CSSSpriteStop()
+#### CSSSpriteStop()
 	Description:
 		- Stops all sprites running associated with the instance of animations.
 	
 	Arguments: None
 		
-####TypeScript Example:
+#### TypeScript Example:
 	
 	var animations: Animations = new Animations();
 	animations.CSSSpriteStop();
 	
-####JavaScript Example:
+#### JavaScript Example:
 	
 	var animations = new Animations();
 	animations.CSSSpriteStop();
 
-####StopAnimations(divElement, [currentLeft], [timerFunction])
+#### StopAnimations(divElement, [currentLeft], [timerFunction])
 	Description:
 		- Stops all css transition animations. Will set the currentLeft and clear the timer if applicable.
 	
@@ -148,19 +148,19 @@ AnimationEasing - this is a class that provides a large majority of common easin
 		- timerFunction: Optional  parameter that will clear any timer passed in.
 		
 		
-####TypeScript Example:
+#### TypeScript Example:
 	
 	var animations: Animations = new Animations();
 	var divElement: HTMLDivElement = <HTMLDivElement>document.getElementById('id');
 	animations.StopAnimations(divElement, -divElement.offsetWidth, timer);
 	
-####JavaScript Example:
+#### JavaScript Example:
 	
 	var animations = new Animations();
 	var divElement = document.getElementById('id');
 	animations.StopAnimations(divElement, -divElement.offsetWidth, timer);
 	
-####AnimateWithTranslate(divElement, transitionTimeInMS, items, [transitionDelayinMS], [timingFunction], [callback], [callbackParams])
+#### AnimateWithTranslate(divElement, transitionTimeInMS, items, [transitionDelayinMS], [timingFunction], [callback], [callbackParams])
 	Description:
 		- Runs a CSS Transform on the div against the items passed in.
 		
@@ -173,7 +173,7 @@ AnimationEasing - this is a class that provides a large majority of common easin
 		- callback: Optional parameter for a function to call when the translate completes.
 		- callbackParams: Optional parameter to pass anything with the callback function.
 		
-####TypeScript Example:
+#### TypeScript Example:
 	
 	var animations: Animations = new Animations();
 	var divElement: HTMLDivElement = <HTMLDivElement>document.getElementById('id');
@@ -183,7 +183,7 @@ AnimationEasing - this is a class that provides a large majority of common easin
 	
 	animations.AnimateWithTranslate(divElement, 500, translateTypes, 0, AnimationEasing.linear, callback, this);
 
-####JavaScript Example:
+#### JavaScript Example:
 	
 	var animations = new Animations();
 	var divElement = document.getElementById('id');
@@ -193,7 +193,7 @@ AnimationEasing - this is a class that provides a large majority of common easin
 	
 	animations.AnimateWithTranslate(divElement, 500, translateTypes, 0, AnimationEasing.linear, callback, this);
 	
-####AnimateWithTransitions(divElement, transitionTimeInMS, items, [transitionDelayinMS], [timingFunction], [callback], [callbackParams], [keepTransitions])
+#### AnimateWithTransitions(divElement, transitionTimeInMS, items, [transitionDelayinMS], [timingFunction], [callback], [callbackParams], [keepTransitions])
 	Description:
 		- Performs an animate on the properties. This is an alternative to JQuery Animate
 	
@@ -206,7 +206,7 @@ AnimationEasing - this is a class that provides a large majority of common easin
 		- callback: Optional parameter for a function to call when the translate completes.
 		- callbackParams: Optional parameter to pass anything with the callback function.
 		
-####TypeScript Example:
+#### TypeScript Example:
 	
 	var animations: Animations = new Animations();
 	var divElement: HTMLDivElement = <HTMLDivElement>document.getElementById('id');
@@ -216,7 +216,7 @@ AnimationEasing - this is a class that provides a large majority of common easin
 	
 	animations.AnimateWithTransitions(divElement, milliseconds, transTypes, 0, '', callback, this);
 	
-####JavaScript Example:
+#### JavaScript Example:
 	
 	var animations = new Animations();
 	var transTypes = [];
@@ -224,26 +224,26 @@ AnimationEasing - this is a class that provides a large majority of common easin
 
 	animations.AnimateWithTransitions(divElement, milliseconds, transTypes, 0, '', callback, this);
 
-####ClearTransitions(divElement)
+#### ClearTransitions(divElement)
 	Description:
 		- Stops all transitions.
 		
 	Arguments:
 		- divElement: the element you wish to stop any transition.
 		
-####TypeScript Example:
+#### TypeScript Example:
 	
 	var animations: Animations = new Animations();
 	var divElement: HTMLDivElement = <HTMLDivElement>document.getElementById('id');
 	animations.ClearTransitions(divElement);
 	
-####JavaScript Example:
+#### JavaScript Example:
 	
 	var animations = new Animations();
 	var divElement = document.getElementById('id');
 	animations.ClearTransitions(divElement);
 	
-####FadeIn(divElement, milliseconds, [callback], [display], [callbackObj])
+#### FadeIn(divElement, milliseconds, [callback], [display], [callbackObj])
 	Description:
 		- Fades in a div and will set the display option if applicable.
 		
@@ -254,19 +254,19 @@ AnimationEasing - this is a class that provides a large majority of common easin
 		- display: Optional string to set the display to (IE: 'inline').
 		- callbackObj: Optional parameter to pass with the callback
 		
-####TypeScript Example:
+#### TypeScript Example:
 	
 	var animations: Animations = new Animations();
 	var divElement: HTMLDivElement = <HTMLDivElement>document.getElementById('id');
 	animations.FadeIn(divElement, 10, null, 'inline');
 	
-####JavaScript Example:
+#### JavaScript Example:
 	
 	var animations = new Animations();
 	var divElement = document.getElementById('id');
 	animations.FadeIn(divElement, 10, null, 'inline');
 
-####FadeOut(divElement, milliseconds, [callback], [displayNone])
+#### FadeOut(divElement, milliseconds, [callback], [displayNone])
 	Description:
 		- Fades out a div and will set the display option if applicable.
 		
@@ -276,19 +276,19 @@ AnimationEasing - this is a class that provides a large majority of common easin
 		- callback: Optional parameter function to fire when fade in completes. Useful for allowing the view to take in user input.
 		- displayNone: Optional boolean to set the display to none when fade out is completed.
 		
-####TypeScript Example:
+#### TypeScript Example:
 	
 	var animations: Animations = new Animations();
 	var divElement: HTMLDivElement = <HTMLDivElement>document.getElementById('id');
 	animations.FadeOut(divElement, 500);
 	
-####JavaScript Example:
+#### JavaScript Example:
 	
 	var animations = new Animations();
 	var divElement = document.getElementById('id');
 	animations.FadeOut(divElement, 500);
 	
-####SlideDown(divElement, milliseconds, difference, [timingFunction])
+#### SlideDown(divElement, milliseconds, difference, [timingFunction])
 	Description:
 		- Slide Down and display the div. Must be a relative or absolute div!
 		
@@ -304,13 +304,13 @@ AnimationEasing - this is a class that provides a large majority of common easin
 	var divElement: HTMLDivElement = <HTMLDivElement>document.getElementById('id');
 	animations.SlideDown(divElement, 500, 500);
 	
-####JavaScript Example:
+#### JavaScript Example:
 	
 	var animations = new Animations();
 	var divElement = document.getElementById('id');
 	animations.SlideDown(divElement, 500, 500);
 	
-####SlideUp(divElement, milliseconds, difference, [timingFunction])
+#### SlideUp(divElement, milliseconds, difference, [timingFunction])
 	Description:
 		- Slide Up and hide the div. Must be a relative or absolute div!
 		
@@ -320,13 +320,13 @@ AnimationEasing - this is a class that provides a large majority of common easin
 		- difference: the value to subtract from the current top value of the div.
 		- timingFunction: Optional string for the timing function. Default to linear.
 		
-####TypeScript Example:
+#### TypeScript Example:
 	
 	var animations: Animations = new Animations();
 	var divElement: HTMLDivElement = <HTMLDivElement>document.getElementById('id');
 	animations.SlideUp(divElement, 500, 500);
 	
-####JavaScript Example:
+#### JavaScript Example:
 	
 	var animations = new Animations();
 	var divElement = document.getElementById('id');
@@ -334,9 +334,9 @@ AnimationEasing - this is a class that provides a large majority of common easin
 
 
 
-##Notes on Contributing
+## Notes on Contributing
 This code was originally written in TypeScript. The generated JavaScript file is provided. If changes are made, it would be best to do it in TypeScript and also commit the generated JavaScript for those who do not wish to mess with it.
 
-##Contribution List
+## Contribution List
 - Daniel Wyers - Testing and Documentation
 - Christopher Wang - Testing
